@@ -1,24 +1,24 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K | Modifieded By : @DC4_WARRIOR
+from telegram.ext import Updater, CommandHandler
+import requests
 
-import os
-import logging
-from config import Config
-from pyrogram import Client as Clinton
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-logger = logging.getLogger(__name__)
+TOKEN = "6965255627:AAGHAspJSX01m1vaKfp6faZdWRJg-hDQtKg"
 
+def download_ott(update, context):
+    url = context.args[0]
+    r = requests.get(url)
+    
+    with open("downloaded_ott_content.mp4", "wb") as f:
+        f.write(r.content)
+    
+    update.message.reply_text("OTT content downloaded successfully! 🎥🔥")
 
-if __name__ == "__main__" :
-    # create download directory, if not exist
-    if not os.path.isdir(Config.DOWNLOAD_LOCATION):
-        os.makedirs(Config.DOWNLOAD_LOCATION)
-    plugins = dict(root="plugins")
-    Warrior = Clinton("@BOT_X_BOT",
-    bot_token=Config.BOT_TOKEN,
-    api_id=Config.API_ID,
-    api_hash=Config.API_HASH,
-    plugins=plugins)
-    Warrior.run()
+def main():
+    updater = Updater(TOKEN, use_context=True)
+    dp = updater.dispatcher
+    dp.add_handler(CommandHandler("download_ott", download_ott))
+    
+    updater.start_polling()
+    updater.idle()
+
+if __name__ == '__main__':
+    main()
