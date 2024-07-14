@@ -2,7 +2,7 @@
   "name": "Uploader X Bot",
   "description": "Telegram Bot to Upload URLs to Telegram as File and Video.",
   "keywords": [ "URL UPLOADER"],
-  "success_url": "https://t.me/Uploader_X_bot",
+  "success_url": "http://t.me/Itxmety73_bot",
   "website": "https://github.com/Clinton-Abraham",
   "repository": "https://github.com/Clinton-Abraham/UPLOADER-BOT",
 
@@ -11,22 +11,22 @@
       "value": "ANYTHING"},
 
     "BOT_TOKEN": {"description": "Your bot token, as a string.",
-        "value": ""},
+        "value": "7355006985:AAEY8ijg4CP-8GgcliRGJja87Tby78QT7To"},
 
     "API_ID": {"description": "Get this value from https://my.telegram.org",
-     "value": ""},
+     "value": "29426486"},
 
     "API_HASH": {"description": "Get this value from https://my.telegram.org",
-       "value": ""},
+       "value": "d71ad4ec048ab41677a1a439b21ff0c9"},
 
     "OWNER_ID": {"description": "Your Telegram ID",
-       "value": ""},
+       "value": "5976437467"},
 
     "PREMIUM_USER": {"description": "If you are a telegram premium user then set this True",
-       "value": "False"},
+       "value": "true"},
 
     "DATABASE_URL": {"description": "Your MongoDB URI",
-           "value": ""} },
+           "value": "mongodb+srv://taha16511:4uPo1wMZxKzrqobP@cluster0.dvlwfxx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"} },
 
   "addons": [ ],
   "buildpacks": [ {"url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"},
